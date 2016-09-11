@@ -31,19 +31,23 @@
 
     <div class="row" ng-controller="BikingListController as bikingListCtrl">
 
+      <button class="btn btn-default" ng-click="reviewFormCtrl.showForm = !reviewFormCtrl.showForm">{{reviewFormCtrl.showForm ? "Cancel" : "Create Review"}}</button>
+      <!--by setting showForm to !showForm, it will change to the state it isn't (true/false)-->
+      <hr>
+
       <ul class="list-unstyled">
-        <li class="row bpListItem" ng-repeat="ride in bikingListCtrl.rides">
+          <hr>
             <div class="col-md-4">
               <ride-cover></ride-cover>
             </div>
 
             <div class="col-md-8">
               <h4>{{ride.title}}</h4>
-              <ride-categories></ride-categories>
               <h5>{{ride.review}}"</h5>
             </div>
 
         </li>
+
       </ul>
     </div>
   </div>
