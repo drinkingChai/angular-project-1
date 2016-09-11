@@ -35,7 +35,10 @@
       <!--by setting showForm to !showForm, it will change to the state it isn't (true/false)-->
       <hr>
 
+      <review-form ng-show="reviewFormCtrl.showForm" rides="bikingListCtrl.rides" tags="bikingListCtrl.tags" ></review-form>
+
       <ul class="list-unstyled">
+        <li class="row" ng-repeat="ride in bikingListCtrl.rides">
           <hr>
             <div class="col-md-4">
               <ride-cover></ride-cover>
@@ -43,6 +46,7 @@
 
             <div class="col-md-8">
               <h4>{{ride.title}}</h4>
+              <ride-tags tags="ride.tags"></ride-tags>
               <h5>{{ride.review}}"</h5>
             </div>
 
